@@ -2,27 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/text_styles.dart';
-import '../../app/theme/app_constants.dart';
 import '../../core/utils/responsive_helper.dart';
-import '../../features/authentication/presentation/login_modal.dart';
-import '../../features/demo/presentation/book_a_demo_modal.dart';
 import '../components/nav_bar_item_button.dart';
 
 class CustomNavigationBar extends StatefulWidget {
+  final VoidCallback? onHomePressed;
+  final VoidCallback? onAboutPressed;
+  final VoidCallback? onAcademicsPressed;
+  final VoidCallback? onGalleryPressed;
+  final VoidCallback? onAdmissionsPressed;
   final VoidCallback? onContactPressed;
-  final VoidCallback? onCompanyPressed;
-  final VoidCallback? onBlogPressed;
-  final VoidCallback? onCaseStudiesPressed;
-  final VoidCallback? onBookDemoPressed;
   final String? activeRoute;
 
   const CustomNavigationBar({
     super.key,
+    this.onHomePressed,
+    this.onAboutPressed,
+    this.onAcademicsPressed,
+    this.onGalleryPressed,
+    this.onAdmissionsPressed,
     this.onContactPressed,
-    this.onCompanyPressed,
-    this.onBlogPressed,
-    this.onCaseStudiesPressed,
-    this.onBookDemoPressed,
     this.activeRoute,
   });
 
@@ -62,19 +61,33 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             padding: ResponsiveHelper.getHorizontalPadding(context),
             child: Row(
               children: [
-                // Logo
-                Text(
-                  'toma',
-                  style: AppTextStyles.navItem.copyWith(
-                    color: AppColors.textPrimary,
-                    fontWeight: FontWeight.w800,
-                    fontSize: ResponsiveHelper.getResponsiveValue(
-                      context: context,
-                      mobile: 22.0,
-                      tablet: 24.0,
-                      desktop: 26.0,
-                    ),
-                    letterSpacing: -0.5,
+                // Logo - School Logo Image + School Name
+                GestureDetector(
+                  onTap: widget.onHomePressed,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        height: ResponsiveHelper.getResponsiveValue(
+                          context: context,
+                          mobile: 75.0,
+                          tablet: 85.0,
+                          desktop: 85.0,
+                        ),
+                        width: ResponsiveHelper.getResponsiveValue(
+                          context: context,
+                          mobile: 75.0,
+                          tablet: 85.0,
+                          desktop: 85.0,
+                        ),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/School/Pearl_logo.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 
@@ -97,33 +110,44 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
 
   Widget _buildDesktopNavigation() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       decoration: BoxDecoration(
         color: AppColors.navBackground.withOpacity(0.9),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.navBorder.withOpacity(0.3)),
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
+          NavBarItemButton(
+            title: 'Home',
+            onPressed: widget.onHomePressed,
+            isActive: widget.activeRoute == '/home',
+          ),
+          NavBarItemButton(
+            title: 'About Us',
+            onPressed: widget.onAboutPressed,
+            isActive: widget.activeRoute == '/about',
+          ),
+          NavBarItemButton(
+            title: 'Academics',
+            onPressed: widget.onAcademicsPressed,
+            isActive: widget.activeRoute == '/academics',
+          ),
+          NavBarItemButton(
+            title: 'Gallery',
+            onPressed: widget.onGalleryPressed,
+            isActive: widget.activeRoute == '/gallery',
+          ),
+          NavBarItemButton(
+            title: 'Admissions',
+            onPressed: widget.onAdmissionsPressed,
+            isActive: widget.activeRoute == '/admissions',
+          ),
           NavBarItemButton(
             title: 'Contact',
             onPressed: widget.onContactPressed,
             isActive: widget.activeRoute == '/contact',
-          ),
-          NavBarItemButton(
-            title: 'Company',
-            onPressed: widget.onCompanyPressed,
-            isActive: widget.activeRoute == '/company',
-          ),
-          NavBarItemButton(
-            title: 'Blog',
-            onPressed: widget.onBlogPressed,
-            isActive: widget.activeRoute == '/blog',
-          ),
-          NavBarItemButton(
-            title: 'Case Studies',
-            onPressed: widget.onCaseStudiesPressed,
-            isActive: widget.activeRoute == '/case-studies',
           ),
         ],
       ),
@@ -133,15 +157,10 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   Widget _buildActionButtons() {
     return Row(
       children: [
-        OutlinedIconButton(
-          label: 'Dealer Login',
-          icon: Icons.person_outline,
-          onPressed: () => _showLoginModal(),
-        ),
-        const SizedBox(width: 12),
         EnhancedPrimaryButton(
-          label: 'Book a Demo',
-          onPressed: () => _showBookDemoModal(), // Updated this line
+          label: 'Get Information',
+          icon: Icons.info_outline,
+          onPressed: widget.onContactPressed,
         ),
       ],
     );
@@ -212,30 +231,41 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               const SizedBox(height: 24),
 
               // Menu items
-              _buildMenuItem('Contact', Icons.contact_mail_outlined, widget.onContactPressed),
-              _buildMenuItem('Company', Icons.business_outlined, widget.onCompanyPressed),
-              _buildMenuItem('Blog', Icons.article_outlined, widget.onBlogPressed),
-              _buildMenuItem('Case Studies', Icons.analytics_outlined, widget.onCaseStudiesPressed),
+              _buildMenuItem('Home', Icons.home_outlined, () {
+                Navigator.pop(context);
+                widget.onHomePressed?.call();
+              }),
+              _buildMenuItem('About Us', Icons.info_outlined, () {
+                Navigator.pop(context);
+                widget.onAboutPressed?.call();
+              }),
+              _buildMenuItem('Academics', Icons.school_outlined, () {
+                Navigator.pop(context);
+                widget.onAcademicsPressed?.call();
+              }),
+              _buildMenuItem('Gallery', Icons.photo_library_outlined, () {
+                Navigator.pop(context);
+                widget.onGalleryPressed?.call();
+              }),
+              _buildMenuItem('Admissions', Icons.assignment_outlined, () {
+                Navigator.pop(context);
+                widget.onAdmissionsPressed?.call();
+              }),
+              _buildMenuItem('Contact', Icons.contact_mail_outlined, () {
+                Navigator.pop(context);
+                widget.onContactPressed?.call();
+              }),
 
               const SizedBox(height: 24),
 
-              // Action buttons
-              OutlinedIconButton(
-                label: 'Dealer Login',
-                icon: Icons.person_outline,
-                isFullWidth: true,
-                onPressed: () {
-                  Navigator.pop(context);
-                  _showLoginModal(); // Updated this line
-                },
-              ),
-              const SizedBox(height: 12),
+              // Action button
               EnhancedPrimaryButton(
-                label: 'Book a Demo',
+                label: 'Get Information',
+                icon: Icons.info_outline,
                 isFullWidth: true,
                 onPressed: () {
                   Navigator.pop(context);
-                  _showBookDemoModal(); // Updated this line
+                  widget.onContactPressed?.call();
                 },
               ),
               const SizedBox(height: 20),
@@ -244,11 +274,6 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         ),
       ),
     ).then((_) => setState(() => _isMenuOpen = false));
-  }
-
-  void _showBookDemoModal() {
-    HapticFeedback.lightImpact();
-    BookDemoModal.show(context);
   }
 
   Widget _buildMenuItem(String title, IconData icon, VoidCallback? onPressed) {
@@ -269,12 +294,5 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       ),
     );
-  }
-
-  // New method to show login modal (ignores any passed callback and uses internal modal)
-  void _showLoginModal() {
-    HapticFeedback.lightImpact();
-    LoginModal.show(context);
-    // Note: We ignore widget.onDealerLoginPressed and use our internal modal instead
   }
 }
