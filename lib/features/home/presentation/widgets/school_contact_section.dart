@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_constants.dart';
@@ -60,7 +59,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
               // Section Title
               Text(
                 'Get In Touch',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: isMobile ? 24 : 36,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primary,
@@ -75,7 +74,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
 
               Text(
                 'Have questions? We\'d love to hear from you. Send us a message!',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textSecondary,
@@ -132,7 +131,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
           // Name field
           Text(
             'Full Name',
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -177,7 +176,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
           // Email field
           Text(
             'Email Address',
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -223,7 +222,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
           // Phone field
           Text(
             'Phone Number',
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -268,7 +267,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
           // Grade level field
           Text(
             'Grade Level (Optional)',
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -331,7 +330,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
           // Message field
           Text(
             'Message (Optional)',
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -388,7 +387,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
               ),
               child: Text(
                 'Send Message',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
@@ -413,7 +412,7 @@ class _SchoolContactSectionState extends State<SchoolContactSection> {
       children: [
         Text(
           'Contact Information',
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w700,
             color: AppColors.primary,
@@ -541,7 +540,7 @@ class _ContactInfoItemState extends State<_ContactInfoItem> {
                     children: [
                       Text(
                         widget.title,
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textMuted,
@@ -550,7 +549,7 @@ class _ContactInfoItemState extends State<_ContactInfoItem> {
                       SizedBox(height: AppConstants.spaceXS),
                       Text(
                         widget.content,
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: _isHovered ? AppColors.buttonPrimary : AppColors.textPrimary,

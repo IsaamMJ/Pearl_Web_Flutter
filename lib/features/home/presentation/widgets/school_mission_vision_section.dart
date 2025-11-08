@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_constants.dart';
 import '../../../../core/utils/responsive_helper.dart';
@@ -53,7 +52,7 @@ class _SchoolMissionVisionSectionState extends State<SchoolMissionVisionSection>
               // Section Title
               Text(
                 'Our Foundation',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: isMobile ? 24 : 36,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primary,
@@ -153,7 +152,7 @@ class _TabButton extends StatelessWidget {
           ),
           child: Text(
             label,
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: isSelected ? Colors.white : AppColors.textPrimary,
@@ -213,7 +212,7 @@ class _ContentCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
                     color: AppColors.primary,
@@ -231,7 +230,7 @@ class _ContentCard extends StatelessWidget {
           // Content text
           Text(
             content,
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
               color: AppColors.textSecondary,
@@ -291,7 +290,7 @@ class _GoalsCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   'Our Goals',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
                     color: AppColors.primary,
@@ -324,7 +323,7 @@ class _GoalsCard extends StatelessWidget {
                     child: Center(
                       child: Text(
                         '✓',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
@@ -341,7 +340,7 @@ class _GoalsCard extends StatelessWidget {
                       padding: EdgeInsets.only(top: AppConstants.spaceXS),
                       child: Text(
                         goals[index],
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                           color: AppColors.textSecondary,

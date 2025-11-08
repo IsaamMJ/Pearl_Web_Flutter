@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_constants.dart';
 import '../../../../core/utils/responsive_helper.dart';
@@ -28,7 +27,7 @@ class SchoolNewsSection extends StatelessWidget {
               // Section Title and Subtitle
               Text(
                 'Latest News & Achievements',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: isMobile ? 24 : 36,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primary,
@@ -43,7 +42,7 @@ class SchoolNewsSection extends StatelessWidget {
 
               Text(
                 'Celebrating Excellence and Academic Achievements',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textSecondary,
@@ -104,7 +103,7 @@ class SchoolNewsSection extends StatelessWidget {
                         children: [
                           Text(
                             'View All News',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
@@ -195,7 +194,7 @@ class _NewsCardState extends State<_NewsCard> {
                     ),
                     child: Text(
                       widget.newsItem.category,
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: _getCategoryColor(widget.newsItem.category),
@@ -208,7 +207,7 @@ class _NewsCardState extends State<_NewsCard> {
                   // Title
                   Text(
                     widget.newsItem.title,
-                    style: GoogleFonts.poppins(
+                    style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textPrimary,
@@ -223,7 +222,7 @@ class _NewsCardState extends State<_NewsCard> {
                   // Description
                   Text(
                     widget.newsItem.description,
-                    style: GoogleFonts.poppins(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       color: AppColors.textSecondary,
@@ -250,7 +249,7 @@ class _NewsCardState extends State<_NewsCard> {
                       Expanded(
                         child: Text(
                           widget.newsItem.date,
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w400,
                             color: AppColors.textMuted,
@@ -259,7 +258,7 @@ class _NewsCardState extends State<_NewsCard> {
                       ),
                       Text(
                         widget.newsItem.views,
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textMuted,

@@ -5,7 +5,8 @@
       "Bash(flutter pub get:*)",
       "Bash(flutter analyze:*)",
       "Bash(flutter run:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_constants.dart';
 import '../../../../app/theme/text_styles.dart';
@@ -105,7 +104,7 @@ class SchoolHeroSection extends StatelessWidget {
                               // School Name (PRIMARY HEADING)
                               Text(
                                 'Pearl Matriculation\nHigher Secondary School',
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: isMobile ? 26 : 40,
                                   fontWeight: FontWeight.w700,
                                   color: Colors.white,
@@ -123,7 +122,7 @@ class SchoolHeroSection extends StatelessWidget {
                               // Location (SMALL, SUPPORTING)
                               Text(
                                 'Therekalputhoor, Tamil Nadu',
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: isMobile ? 11 : 13,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white.withOpacity(0.85),
@@ -141,7 +140,7 @@ class SchoolHeroSection extends StatelessWidget {
                               // Main Tagline (SECONDARY MESSAGE)
                               Text(
                                 SchoolData.tagline,
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: isMobile ? 18 : 32,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white.withOpacity(0.95),
@@ -158,7 +157,7 @@ class SchoolHeroSection extends StatelessWidget {
                               // Subtitle (SUPPORTING TEXT)
                               Text(
                                 SchoolData.subTagline,
-                                style: GoogleFonts.poppins(
+                                style: TextStyle(
                                   fontSize: isMobile ? 13 : 16,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.white.withOpacity(0.85),

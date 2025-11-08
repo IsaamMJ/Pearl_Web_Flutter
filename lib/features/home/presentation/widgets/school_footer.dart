@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_constants.dart';
@@ -79,7 +78,7 @@ class SchoolFooter extends StatelessWidget {
                   children: [
                     Text(
                       '© 2025 Pearl Matriculation Higher Secondary School. All rights reserved.',
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: Colors.white.withOpacity(0.7),
@@ -91,7 +90,7 @@ class SchoolFooter extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             'Privacy Policy',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: Colors.white.withOpacity(0.7),
@@ -100,7 +99,7 @@ class SchoolFooter extends StatelessWidget {
                         ),
                         Text(
                           ' • ',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: 12,
                             color: Colors.white.withOpacity(0.5),
                           ),
@@ -109,7 +108,7 @@ class SchoolFooter extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             'Terms & Conditions',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: Colors.white.withOpacity(0.7),
@@ -126,7 +125,7 @@ class SchoolFooter extends StatelessWidget {
                   children: [
                     Text(
                       '© 2025 Pearl Matriculation Higher Secondary School. All rights reserved.',
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w400,
                         color: Colors.white.withOpacity(0.7),
@@ -140,7 +139,7 @@ class SchoolFooter extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             'Privacy Policy',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w400,
                               color: Colors.white.withOpacity(0.7),
@@ -149,7 +148,7 @@ class SchoolFooter extends StatelessWidget {
                         ),
                         Text(
                           '•',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: 11,
                             color: Colors.white.withOpacity(0.5),
                           ),
@@ -158,7 +157,7 @@ class SchoolFooter extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             'Terms',
-                            style: GoogleFonts.poppins(
+                            style: TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w400,
                               color: Colors.white.withOpacity(0.7),
@@ -182,7 +181,7 @@ class SchoolFooter extends StatelessWidget {
       children: [
         Text(
           'Pearl Matriculation\nHigher Secondary School',
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: Colors.white,
@@ -197,7 +196,7 @@ class SchoolFooter extends StatelessWidget {
 
         Text(
           SchoolData.subTagline,
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w400,
             color: Colors.white.withOpacity(0.8),
@@ -213,7 +212,7 @@ class SchoolFooter extends StatelessWidget {
         // Tagline
         Text(
           'Study • Serve • Shine',
-          style: GoogleFonts.crimsonText(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
             color: Colors.white.withOpacity(0.9),
@@ -241,7 +240,7 @@ class SchoolFooter extends StatelessWidget {
       children: [
         Text(
           'Quick Links',
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w700,
             color: Colors.white,
@@ -273,7 +272,7 @@ class SchoolFooter extends StatelessWidget {
       children: [
         Text(
           'Contact',
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w700,
             color: Colors.white,
@@ -306,7 +305,7 @@ class SchoolFooter extends StatelessWidget {
         // Social Media
         Text(
           'Follow Us',
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w600,
             color: Colors.white.withOpacity(0.8),
@@ -367,7 +366,7 @@ class _FooterLinkState extends State<_FooterLink> {
         ),
         child: Text(
           widget.text,
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w400,
             color: _isHovered ? Colors.white : Colors.white.withOpacity(0.8),
@@ -421,7 +420,7 @@ class _FooterContactItemState extends State<_FooterContactItem> {
               Expanded(
                 child: Text(
                   widget.text,
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w400,
                     color: Colors.white.withOpacity(_isHovered ? 1.0 : 0.8),

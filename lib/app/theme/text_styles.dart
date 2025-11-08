@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
-  // Hero section text with Times-style serif fonts
-  static TextStyle heroTitle = GoogleFonts.crimsonText(  // Times-like serif font
+  // Hero section text with serif-style fonts (using system defaults)
+  static TextStyle heroTitle = TextStyle(  // Serif-style font
     fontSize: 48,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
     height: 1.1,
   );
 
-  static TextStyle heroSubtitle = GoogleFonts.crimsonText(  // Times-like serif font
+  static TextStyle heroSubtitle = TextStyle(  // Serif-style font
     fontSize: 20,
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
     height: 1.5,
   );
 
-  // Alternative hero styles with different serif fonts
-  static TextStyle heroTitleLibreBaskerville = GoogleFonts.libreBaskerville(
+  // Alternative hero styles with serif appearance
+  static TextStyle heroTitleLibreBaskerville = TextStyle(
     fontSize: 48,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
     height: 1.1,
   );
 
-  static TextStyle heroTitlePlayfairDisplay = GoogleFonts.playfairDisplay(
+  static TextStyle heroTitlePlayfairDisplay = TextStyle(
     fontSize: 48,
     fontWeight: FontWeight.w700,
     color: AppColors.textPrimary,
@@ -34,7 +33,7 @@ class AppTextStyles {
   );
 
   // Section headings
-  static TextStyle sectionTitle = GoogleFonts.inter(
+  static TextStyle sectionTitle = TextStyle(
     fontSize: 36,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
@@ -42,28 +41,28 @@ class AppTextStyles {
   );
 
   // Card titles
-  static TextStyle cardTitle = GoogleFonts.inter(
+  static TextStyle cardTitle = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
 
   // Body text
-  static TextStyle bodyLarge = GoogleFonts.inter(
+  static TextStyle bodyLarge = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w400,
     color: AppColors.textPrimary,
     height: 1.6,
   );
 
-  static TextStyle bodyMedium = GoogleFonts.inter(
+  static TextStyle bodyMedium = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
     height: 1.5,
   );
 
-  static TextStyle bodySmall = GoogleFonts.inter(
+  static TextStyle bodySmall = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.textMuted,
@@ -71,14 +70,14 @@ class AppTextStyles {
   );
 
   // Button text
-  static TextStyle button = GoogleFonts.inter(
+  static TextStyle button = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
 
   // Navigation
-  static TextStyle navItem = GoogleFonts.inter(
+  static TextStyle navItem = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: AppColors.textPrimary,
@@ -96,7 +95,7 @@ class AppTextStyles {
     required Color color,
     double height = 1.2,
   }) {
-    return GoogleFonts.crimsonText(
+    return TextStyle(
       fontSize: fontSize,
       fontWeight: fontWeight,
       color: color,

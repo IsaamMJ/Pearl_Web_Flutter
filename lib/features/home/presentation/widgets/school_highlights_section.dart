@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_constants.dart';
 import '../../../../core/utils/responsive_helper.dart';
@@ -28,7 +27,7 @@ class SchoolHighlightsSection extends StatelessWidget {
               // Section Title
               Text(
                 'Why Choose Pearl School',
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: isMobile ? 24 : 36,
                   fontWeight: FontWeight.w700,
                   color: AppColors.primary,
@@ -119,7 +118,7 @@ class _HighlightCard extends StatelessWidget {
                 // Title
                 Text(
                   highlight.title,
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -144,7 +143,7 @@ class _HighlightCard extends StatelessWidget {
                   ),
                   child: Text(
                     highlight.value,
-                    style: GoogleFonts.poppins(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.buttonPrimary,
@@ -159,7 +158,7 @@ class _HighlightCard extends StatelessWidget {
                 // Description
                 Text(
                   highlight.description,
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textSecondary,
