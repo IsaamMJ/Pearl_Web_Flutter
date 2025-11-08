@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => HomeBloc()),
       ],
       child: MaterialApp.router(
-        title: 'Portfolio',
+        title: 'Pearl Matriculation Higher Secondary School',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         routerConfig: AppRouter.router,
