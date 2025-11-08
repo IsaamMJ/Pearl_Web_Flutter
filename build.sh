@@ -1,29 +1,14 @@
 #!/bin/bash
-set -e  # Exit on any error
 
-echo "Installing Flutter..."
+# Install Flutter
+git clone https://github.com/flutter/flutter.git ~/flutter
+export PATH="$PATH:~/flutter/bin"
 
-# Remove existing flutter directory if it exists
-if [ -d "flutter" ]; then
-    echo "Removing existing Flutter directory..."
-    rm -rf flutter
-fi
-
-# Clone Flutter
-git clone https://github.com/flutter/flutter.git -b stable --depth 1
-export PATH="$PATH:`pwd`/flutter/bin"
-
-echo "Flutter version:"
-flutter --version
-
-echo "Enabling web support..."
+# Enable web support
 flutter config --enable-web
 
-echo "Getting dependencies..."
+# Get dependencies
 flutter pub get
 
-echo "Building web app..."
-flutter build web --release
-
-echo "Build completed successfully!"
-ls -la build/web/
+# Build web app with verbose output
+flutter build web

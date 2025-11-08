@@ -1,12 +1,3 @@
 [build]
-command = "chmod +x build.sh && ./build.sh"
+command = "bash build.sh"
 publish = "build/web"
-
-[build.environment]
-FLUTTER_WEB = "true"
-NODE_VERSION = "18"
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
